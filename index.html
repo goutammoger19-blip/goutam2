@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090414">
+  <title>A Little Surprise ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene"></canvas>
+  <div class="noise"></div>
+  <div id="hearts"></div>
+
+  <main id="app">
+    <section class="screen active" id="intro">
+      <div class="orb orb-a"></div><div class="orb orb-b"></div>
+      <div class="intro-card glass">
+        <p class="eyebrow">A LITTLE SURPRISE</p>
+        <h1>Something special<br><span>is waiting for you.</span></h1>
+        <p class="sub">Take a breath. Tap the button. Let the magic begin.</p>
+        <button class="primary" data-next="lock">Enter the surprise <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="lock">
+      <div class="glass lock-card">
+        <div class="lock-icon">♥</div>
+        <p class="eyebrow">JUST FOR YOU</p>
+        <h2>When is the special day?</h2>
+        <p class="muted">Enter the birthday date to unlock your surprise.</p>
+        <div class="date-row">
+          <input id="day" type="number" min="1" max="31" placeholder="DD">
+          <span>/</span>
+          <input id="month" type="number" min="1" max="12" placeholder="MM">
+        </div>
+        <button class="primary" id="unlock">Unlock ❤️</button>
+        <button class="text-btn" id="skip">I want to see it anyway</button>
+        <p class="error" id="error"></p>
+      </div>
+    </section>
+
+    <section class="screen" id="celebrate">
+      <div class="celebrate-wrap">
+        <p class="eyebrow">TODAY IS YOUR DAY</p>
+        <h2>Happy Birthday, <span id="personName">Beautiful</span>! ✨</h2>
+        <div class="cake-scene">
+          <div class="cake-glow"></div>
+          <div class="cake">
+            <div class="flame f1"></div><div class="flame f2"></div><div class="flame f3"></div>
+            <div class="candle c1"></div><div class="candle c2"></div><div class="candle c3"></div>
+            <div class="icing"></div><div class="cake-top"></div><div class="cake-mid"></div><div class="cake-bottom"></div>
+          </div>
+        </div>
+        <p class="cake-note">Make a wish before the candles disappear.</p>
+        <button class="primary" id="blow">Make a wish ✨</button>
+      </div>
+    </section>
+
+    <section class="screen" id="wishes">
+      <div class="wish-wrap">
+        <p class="eyebrow">A FEW LITTLE WISHES</p>
+        <h2>Pop the balloons 🎈</h2>
+        <p class="muted">Tap each one to reveal a message.</p>
+        <div class="balloon-field">
+          <button class="balloon b1" data-message="May every dream you carry become a beautiful reality.">♥</button>
+          <button class="balloon b2" data-message="May your smile stay brighter than every difficult day.">★</button>
+          <button class="balloon b3" data-message="May this year bring you unexpected happiness.">✦</button>
+          <button class="balloon b4" data-message="You deserve all the love, peace and magic in the world.">♡</button>
+          <button class="balloon b5" data-message="And remember: your best chapters are still ahead.">∞</button>
+        </div>
+        <div class="message-pop glass" id="balloonMessage"></div>
+        <button class="primary hidden" id="toGift">There is one more surprise →</button>
+      </div>
+    </section>
+
+    <section class="screen" id="gift">
+      <div class="gift-wrap">
+        <p class="eyebrow">ONE LAST THING</p>
+        <h2>I made this little world for you.</h2>
+        <button class="gift-box" id="giftBox" aria-label="Open gift">
+          <span class="lid"></span><span class="ribbon-v"></span><span class="ribbon-h"></span><span class="box-body"></span>
+        </button>
+        <p class="muted">Tap the gift</p>
+      </div>
+    </section>
+
+    <section class="screen" id="letter">
+      <div class="letter glass">
+        <div class="letter-top">For <span id="letterName">You</span> ❤️</div>
+        <h2>Happy Birthday</h2>
+        <p id="typed"></p>
+        <div class="signature">With all my love,<br><span>Someone who cares about you</span></div>
+        <button class="primary" id="restart">Experience it again ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="music-control">
+    <button id="musicBtn" aria-label="Toggle music">♫</button>
+  </div>
+  <audio id="music" loop preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
